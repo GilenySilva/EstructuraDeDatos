@@ -1,0 +1,36 @@
+ejemplos          complejidad
+ejemplo 1          O(1)
+ejemplo 2          O(n)
+ejemplo 3          O(n^2)
+ejemplo 4          O(log n)
+ejemplo 5          O(2^n)
+ejemplo 6          O(n log n)
+
+Actividad Práctica 2: Optimización de Algoritmo
+
+Contexto:
+
+Tienes un sistema en el que necesitas detectar si hay elementos duplicados en una lista de datos. Este algoritmo es crítico porque se ejecuta como parte de un proceso de validación de datos antes de realizar cálculos costosos. El sistema original fue diseñado rápidamente y utiliza una solución con complejidad O(n^2). Ahora, necesitas optimizar este algoritmo para mejorar el rendimiento.
+
+Código Original (Ineficiente) - Java:
+
+SOLUCIÓN
+
+import java.util.HashSet;
+
+public boolean hasDuplicate(int[] arr) 
+{
+    HashSet<Integer> seen = new HashSet<>();
+    for (int num : arr) 
+{
+        if (seen.contains(num)) 
+{
+            return true;
+        }
+        seen.add(num);
+    }
+    return false;
+}
+
+
+ahora su complejidad es de O(1), lo que hace que el algoritmo sea mucho más eficiente.
