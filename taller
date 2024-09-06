@@ -1,0 +1,182 @@
+# Definir la estructura de un nodo
+class Nodo:
+    def __init__(self, dato):
+        self.dato = dato  
+        self.siguiente = None  
+
+# Implementar la clase ListaEnlazada
+class ListaEnlazada:
+    def __init__(self):
+        self.cabeza = None  
+
+    # Método para insertar un nodo al inicio de la lista
+    def insertar_inicio(self, dato):
+        nuevo_nodo = Nodo(dato)  
+        nuevo_nodo.siguiente = self.cabeza  
+        self.cabeza = nuevo_nodo  
+
+    # Método para recorrer e imprimir la lista
+    def recorrer_lista(self):
+        actual = self.cabeza  
+        while actual is not None:
+            print(actual.dato)  
+            actual = actual.siguiente  
+
+# Crear la lista enlazada
+lista = ListaEnlazada()
+
+# Insertar 5 elementos
+lista.insertar_inicio(10)
+lista.insertar_inicio(20)
+lista.insertar_inicio(30)
+lista.insertar_inicio(40)
+lista.insertar_inicio(50)
+
+# Recorrer e imprimir los elementos de la lista
+lista.recorrer_lista()
+
+
+# Definir la estructura de un nodo
+class Nodo:
+    def __init__(self, dato):
+        self.dato = dato 
+        self.siguiente = None  
+
+# Implementar la clase ListaEnlazada
+class ListaEnlazada:
+    def __init__(self):
+        self.cabeza = None  
+
+    # Método para insertar un nodo al inicio de la lista
+    def insertar_inicio(self, dato):
+        nuevo_nodo = Nodo(dato)  
+        nuevo_nodo.siguiente = self.cabeza  
+        self.cabeza = nuevo_nodo 
+
+    # Método para recorrer e imprimir la lista
+    def recorrer_lista(self):
+        actual = self.cabeza  
+        while actual is not None:
+            print(actual.dato)  
+            actual = actual.siguiente  
+
+    # Método para eliminar un nodo por su valor
+    def eliminar(self, valor):
+        actual = self.cabeza
+        previo = None
+
+        # Si la cabeza contiene el valor a eliminar
+        if actual is not None and actual.dato == valor:
+            self.cabeza = actual.siguiente  
+            actual = None  
+            return
+
+        # Buscar el nodo que contiene el valor
+        while actual is not None and actual.dato != valor:
+            previo = actual
+            actual = actual.siguiente
+
+        # Si no se encontró el nodo
+        if actual is None:
+            print(f"El valor {valor} no está en la lista.")
+            return
+
+        # Eliminar el nodo enlazando el nodo previo con el siguiente
+        previo.siguiente = actual.siguiente
+        actual = None  
+
+# Crear la lista enlazada
+lista = ListaEnlazada()
+
+# Insertar algunos elementos
+lista.insertar_inicio(10)
+lista.insertar_inicio(20)
+lista.insertar_inicio(30)
+lista.insertar_inicio(40)
+lista.insertar_inicio(50)
+
+print("Lista original:")
+lista.recorrer_lista()
+
+# Eliminar un nodo
+lista.eliminar(30)
+
+print("\nLista después de eliminar el valor 30:")
+lista.recorrer_lista()
+
+
+
+# Definir la estructura de un nodo
+class Nodo:
+    def __init__(self, dato):
+        self.dato = dato  
+        self.siguiente = None  
+
+# Implementar la clase ListaEnlazada
+class ListaEnlazada:
+    def __init__(self):
+        self.cabeza = None  
+
+    # Método para insertar un nodo al inicio de la lista
+    def insertar_inicio(self, dato):
+        nuevo_nodo = Nodo(dato)  
+        nuevo_nodo.siguiente = self.cabeza  
+        self.cabeza = nuevo_nodo  
+
+    # Método para recorrer e imprimir la lista
+    def recorrer_lista(self):
+        actual = self.cabeza  
+        while actual is not None:
+            print(actual.dato)  
+            actual = actual.siguiente  
+
+    # Método para eliminar un nodo por su valor
+    def eliminar(self, valor):
+        actual = self.cabeza
+        previo = None
+
+        # Si la cabeza contiene el valor a eliminar
+        if actual is not None and actual.dato == valor:
+            self.cabeza = actual.siguiente  
+            actual = None  
+            return
+
+        # Buscar el nodo que contiene el valor
+        while actual is not None and actual.dato != valor:
+            previo = actual
+            actual = actual.siguiente
+
+        # Si no se encontró el nodo
+        if actual is None:
+            print(f"El valor {valor} no está en la lista.")
+            return
+
+        # Eliminar el nodo enlazando el nodo previo con el siguiente
+        previo.siguiente = actual.siguiente
+        actual = None  
+
+    # Método para buscar un nodo por su valor
+    def buscar(self, valor):
+        actual = self.cabeza  
+        while actual is not None:
+            if actual.dato == valor:
+                return True  
+            actual = actual.siguiente
+        return False  
+
+# Crear la lista enlazada
+lista = ListaEnlazada()
+
+# Insertar algunos elementos
+lista.insertar_inicio(10)
+lista.insertar_inicio(20)
+lista.insertar_inicio(30)
+lista.insertar_inicio(40)
+lista.insertar_inicio(50)
+
+# Buscar un valor en la lista
+valor_a_buscar = 30
+if lista.buscar(valor_a_buscar):
+    print(f"El valor {valor_a_buscar} se encuentra en la lista.")
+else:
+    print(f"El valor {valor_a_buscar} no se encuentra en la lista.")
